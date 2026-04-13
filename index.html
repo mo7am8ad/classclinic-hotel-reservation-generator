@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Class Suite Hotel Reservation Confirmation</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" defer></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="app">
+    <section class="panel form-panel">
+      <h1>Reservation Confirmation Generator</h1>
+      <p class="subtitle">Enter guest details and generate a professional PDF instantly.</p>
+
+      <form id="reservationForm" class="form-grid">
+        <label>
+          Guest Name
+          <input type="text" id="guestName" value="John Doe" required />
+        </label>
+
+        <label>
+          Arrival Date
+          <input type="date" id="arrivalDate" required />
+        </label>
+
+        <label>
+          Departure Date
+          <input type="date" id="departureDate" required />
+        </label>
+
+        <label>
+          Room Type
+          <input type="text" id="roomType" value="King Room" />
+        </label>
+
+        <label>
+          Number of People
+          <input type="number" id="peopleCount" min="1" value="2" />
+        </label>
+
+        <label class="full-width">
+          People Names
+          <textarea id="peopleNames" rows="3" placeholder="e.g. John Doe, Jane Doe"></textarea>
+        </label>
+
+        <label>
+          Daily Rate
+          <input type="text" id="dailyRate" value="€120" />
+        </label>
+
+        <label>
+          Confirmation No
+          <input type="text" id="confirmationNo" value="6180" />
+        </label>
+
+        <label class="full-width">
+          Special Notes
+          <textarea id="specialNotes" rows="4" placeholder="Any special requests..."></textarea>
+        </label>
+
+        <div class="actions full-width">
+          <button type="button" id="generatePdfBtn">Generate PDF</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="panel preview-panel">
+      <div class="preview-header">
+        <h2>Live Preview</h2>
+        <p>A4 layout ready for download</p>
+      </div>
+
+      <div id="previewViewport">
+        <article id="pdfContent" class="a4-page">
+          <header class="doc-header">
+            <div class="hotel-brand">
+              <img
+                class="logo"
+                alt="Class Suite Hotel Logo"
+                src="assets/hotel-logo.png"
+              />
+            </div>
+            <div class="hotel-info">
+              <strong>Class Suite Hotel</strong><br />
+              Yeşilova, Kahramanlar Cd. No.4, Küçükçekmece / Istanbul, Turkey<br />
+              T: +90 212 905 11 11<br />
+              T: +90 212 905 11 12<br />
+              F: +90 212 905 11 13<br />
+              www.classsuithotel.com
+            </div>
+          </header>
+
+          <h3 class="doc-title">Reservation Confirmation</h3>
+
+          <section class="static-info">
+            <div><span>Contact:</span> 092129051112</div>
+            <div><span>Company:</span> Class Hair</div>
+            <div><span>Agent:</span> Class Hair</div>
+            <div><span>Phone:</span> 0902129051112</div>
+            <div><span>Issue Date:</span> <span id="issueDatePreview"></span></div>
+          </section>
+
+          <p class="body-intro">
+            We would like to thank you for your interest in Class Suite Hotel and confirm your
+            reservation as follows:
+          </p>
+
+          <section class="reservation-table">
+            <div><span>Guest Name</span><strong id="guestNamePreview"></strong></div>
+            <div><span>Arrival Date</span><strong id="arrivalDatePreview"></strong></div>
+            <div><span>Departure Date</span><strong id="departureDatePreview"></strong></div>
+            <div><span>Room Type</span><strong id="roomTypePreview"></strong></div>
+            <div><span>Number of People</span><strong id="peopleCountPreview"></strong></div>
+            <div><span>People Names</span><strong id="peopleNamesPreview"></strong></div>
+            <div><span>Daily Rate</span><strong id="dailyRatePreview"></strong></div>
+            <div><span>Confirmation No</span><strong id="confirmationNoPreview"></strong></div>
+            <div><span>Special Notes</span><strong id="specialNotesPreview"></strong></div>
+          </section>
+
+          <section class="terms">
+            <h4>Terms &amp; Conditions</h4>
+            <p>
+              This confirmation is valid for the dates and guest details stated above. Any
+              modifications or cancellations must be communicated in writing. Early check-in and
+              late check-out requests are subject to availability. Additional charges may apply for
+              extra services or incidental expenses.
+            </p>
+          </section>
+
+          <section class="signature">
+            <p>Zuhre Cohantimur</p>
+            <p>Reservation Department</p>
+          </section>
+
+          <footer class="doc-footer">
+            <div></div>
+          </footer>
+        </article>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
