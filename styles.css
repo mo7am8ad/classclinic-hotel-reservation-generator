@@ -63,12 +63,14 @@ label {
 }
 
 input,
+select,
 textarea,
 button {
   font: inherit;
 }
 
 input,
+select,
 textarea {
   padding: 10px 12px;
   border-radius: 9px;
@@ -130,6 +132,8 @@ button:disabled {
   background: #e2e8f0;
   border-radius: 10px;
   border: 1px solid #cbd5e1;
+  display: flex;
+  justify-content: center;
 }
 
 .a4-page {
@@ -264,5 +268,21 @@ button:disabled {
 @media (max-width: 650px) {
   .app {
     padding: 10px;
+  }
+
+  .form-panel,
+  .preview-panel {
+    padding: 12px;
+  }
+
+  #previewViewport {
+    padding: 8px;
+  }
+
+  .a4-page {
+    transform: scale(0.5);
+    transform-origin: top center;
+    margin-right: -105mm;
+    margin-bottom: -148.5mm;
   }
 }

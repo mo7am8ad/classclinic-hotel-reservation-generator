@@ -8,7 +8,6 @@ const fields = {
   roomType: document.getElementById("roomType"),
   peopleCount: document.getElementById("peopleCount"),
   peopleNames: document.getElementById("peopleNames"),
-  dailyRate: document.getElementById("dailyRate"),
   confirmationNo: document.getElementById("confirmationNo"),
   specialNotes: document.getElementById("specialNotes")
 };
@@ -21,7 +20,6 @@ const preview = {
   roomType: document.getElementById("roomTypePreview"),
   peopleCount: document.getElementById("peopleCountPreview"),
   peopleNames: document.getElementById("peopleNamesPreview"),
-  dailyRate: document.getElementById("dailyRatePreview"),
   confirmationNo: document.getElementById("confirmationNoPreview"),
   specialNotes: document.getElementById("specialNotesPreview")
 };
@@ -55,7 +53,6 @@ function updatePreview() {
   preview.roomType.textContent = sanitize(fields.roomType.value || "King Room");
   preview.peopleCount.textContent = sanitize(fields.peopleCount.value);
   preview.peopleNames.textContent = sanitize(fields.peopleNames.value);
-  preview.dailyRate.textContent = sanitize(fields.dailyRate.value);
   preview.confirmationNo.textContent = sanitize(fields.confirmationNo.value || "6180");
   preview.specialNotes.textContent = sanitize(fields.specialNotes.value);
 }

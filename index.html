@@ -33,7 +33,14 @@
 
         <label>
           Room Type
-          <input type="text" id="roomType" value="King Room" />
+          <select id="roomType">
+            <option value="King Room" selected>King Room</option>
+            <option value="Twin Room">Twin Room</option>
+            <option value="Double Room">Double Room</option>
+            <option value="Triple Room">Triple Room</option>
+            <option value="Family Room">Family Room</option>
+            <option value="Suite">Suite</option>
+          </select>
         </label>
 
         <label>
@@ -44,11 +51,6 @@
         <label class="full-width">
           People Names
           <textarea id="peopleNames" rows="3" placeholder="e.g. John Doe, Jane Doe"></textarea>
-        </label>
-
-        <label>
-          Daily Rate
-          <input type="text" id="dailyRate" value="€120" />
         </label>
 
         <label>
@@ -115,7 +117,6 @@
             <div><span>Room Type</span><strong id="roomTypePreview"></strong></div>
             <div><span>Number of People</span><strong id="peopleCountPreview"></strong></div>
             <div><span>People Names</span><strong id="peopleNamesPreview"></strong></div>
-            <div><span>Daily Rate</span><strong id="dailyRatePreview"></strong></div>
             <div><span>Confirmation No</span><strong id="confirmationNoPreview"></strong></div>
             <div><span>Special Notes</span><strong id="specialNotesPreview"></strong></div>
           </section>
